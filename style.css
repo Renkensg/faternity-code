@@ -1,0 +1,130 @@
+body, ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+#logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#header {
+  box-sizing: border-box;
+  height: 70px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #e7e7e7;
+}
+
+#menu {
+  display: flex;
+  list-style: none;
+  gap: .5rem;
+}
+
+#menu a {
+  display: block;
+  padding: .5rem;
+}
+
+#btn-mobile {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  #menu {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    right: 0;
+    background: #e7e7e7;
+    height: 0;
+    transition: .6s;
+    z-index: 1000;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+  #nav.active #menu {
+    height: calc(100vh - 70px);
+    visibility: visible;
+    overflow-y: auto;
+  }
+  #menu a {
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-bottom: 2px solid rgba(0, 0, 0, .05);
+  }
+  #btn-mobile {
+    display: flex;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: .5rem;
+    transition: .4s;
+  }
+  #hamburger {
+    border-top: 2px solid;
+    width: 20px;
+  }
+  #hamburger::after, #hamburger::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: currentColor;
+    margin-top: 5px;
+    transition: .4s;
+  }
+  #nav.active #hamburger {
+    border-top-color: transparent;
+    transition: .2s;
+  }
+  #nav.active #hamburger::before {
+    transform: rotate(135deg);
+  }
+  #nav.active #hamburger::after {
+    transform: rotate(-135deg);
+    margin-top: -2px;
+  }
+  #nav.active #btn-mobile {
+    gap: .2rem;
+  }
+}
+
+#find {
+  background-color: #e7e7e7;
+  border: solid 1px;
+  border-radius: 15px;
+  width: 300px;
+}
+
+#search {
+  float: left;
+  background-color: transparent;
+  padding-left: 10px;
+  font-style: italic;
+  font-size: 18px;
+  border: none;
+  border-radius: 15px 0 0 15px;
+  height: 32px;
+  width: 260px;
+}
+
+#lupa {
+  background-color: transparent;
+  border: none;
+  border-radius: 0 15px 15px 0;
+  padding-right: 5px;
+  height: 32px;
+}

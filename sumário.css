@@ -1,0 +1,349 @@
+* {
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid #121214;
+
+  background-color: #121214;
+
+  color: white;
+}
+
+html {
+  padding-top: 0;
+}
+
+body {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "main aside";
+  justify-content: stretch;
+  align-content: start;
+  font: 62.5% "Lato", sans-serif;
+  height: 100vh;
+  padding: 5px 0 10px 0;
+  margin: 5px 0 10px 0;
+}
+
+@media (max-width: 780px) {
+  body {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "main"
+      "aside";
+    justify-content: center;
+    align-content: start;
+    font: 62.5% "Lato", sans-serif;
+    height: 100vh;
+    padding: 5px 0 10px 0;
+    margin: 5px 0 10px 0;
+  }
+}
+
+@media (max-width: 500px) {
+  body * {
+    font: 50% "Lato", sans-serif;
+    margin: 5px 0 0 0;
+  }
+}
+
+/* Inside header is the .título */
+header {
+  margin: 0 5px;
+  padding: 0 5px;
+  height: fit-content;
+  grid-area: header;
+}
+
+/* Inside main is the .card */
+main {
+  margin-top: 0;
+  padding-top: 0;
+  height: fit-content;
+  grid-area: main;
+}
+
+/* Inside aside is the .glossário */
+aside {
+  grid-area: aside;
+  height: fit-content;
+}
+
+/* This is the h1 "< Guia para iniciantes! /> */
+.título {
+  margin-top: 0;
+  padding-top: 0;
+  text-align: center;
+  font-size: 2.2rem;
+}
+
+@media (max-width: 500px) {
+  .título {
+    font-size: 7vw;
+  }
+}
+
+/* .cards is the box who contains the information boxes. */
+.cards {
+  padding: 0;
+  margin: 0;
+}
+
+/* These ".card" are the header information box. */
+.card {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  max-width: 330px;
+  margin: auto;
+  padding-top: 7px;
+  text-align: center;
+  border-radius: 10%;
+  transition: .6s;
+}
+
+.card * {
+  transition: .6s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  transition: 0.6s;
+  background: #171717;
+  border-color: transparent;
+}
+
+.card:hover * {
+  color: #cccccc;
+  transition: .6s;
+}
+
+.card img {
+  width: 250px;
+  margin: auto;
+  padding: 0;
+  border-radius: 50%;
+  background-color: mediumspringgreen;
+  box-sizing: border-box;
+  /* background: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%); */
+}
+
+@media (max-width: 500px) {
+  .card img {
+    width: 50vw;
+  }
+}
+
+.card img:hover {
+  transform: scale(1.04);
+  padding: 2px;
+  transition: 0.4s;
+}
+
+/* The ".title" is about the h2 "Guilherme Renkens", subtitle and links inside the .card. */
+.title,
+.title * {
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.title {
+  color: grey;
+  font-size: 1.2rem;
+}
+
+/* Back to the .card to respect the cascading style order. */
+.card h2 {
+  font-size: 1.8rem;
+}
+
+.card a {
+  font-size: 1.4rem;
+}
+
+/* These are the links that was added to the header box. */
+.fa-linkedin:hover {
+  transform: scale(1.5);
+  text-shadow: 1px 1px 0 rgb(0, 12, 7), 0 0 0.2em rgb(0, 0, 255), 0 0 0.7em rgb(0, 0, 160), 1px 1px 1.3em rgb(0, 0, 70);
+  transition: 0.3s;
+}
+
+.fa-discord:hover {
+  transform: scale(1.4);
+  text-shadow: 1px 1px 0 rgb(0, 12, 7), 0 0 0.2em rgb(255, 0, 255), 0 0 0.7em rgb(128, 0, 255), 1px 1px 1.3em rgb(71, 0, 143);
+  transition: 0.3s;
+}
+
+/* This is the box that align .fundamentar and his boxes in the center. */
+.glossário {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+}
+
+/* This is the box that contain the lesson's link boxes. */
+.painel {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.4rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+}
+
+/* Thats to auto-organize the lesson's boxes on a medium display. */
+@media (max-width: 1531px) {
+  .painel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0.59rem;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+}
+
+/* Thats to auto-organize the lesson's boxes on a small display. */
+@media (max-width: 1225px) {
+  .painel {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 0.59rem;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+}
+
+/* Those was the old ones displays columns organize */
+/*@media (max-width: 1295px) {
+  .fundamentar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(385px, 385px));
+    column-gap: 0.59rem;
+    box-sizing: border-box;
+    justify-content: center;
+    width: 95vw;
+  }
+} 
+
+@media (max-width: 700px) {
+  .fundamentar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(385px, 385px));
+    column-gap: 0.59rem;
+    box-sizing: border-box;
+    justify-content: center;
+    width: 95vw;
+  }
+}
+*/
+
+/* These ".chip" are the lesson's link buttons. */
+/* This one is to give them their border, display format and rounded design. */
+.chip {
+  border: 2px solid gray;
+  display: inline-block;
+  padding: 0 25px;
+  height: 50px;
+  min-width: max-content;
+  font-size: 16px;
+  line-height: 50px;
+  border-radius: 25px;
+}
+
+/* The difference between these two is that the hover only is for the border, and the a:hover is for the text. */
+.chip:hover {
+  border: 2px solid mediumspringgreen;
+  transition: 0.4s;
+}
+
+.chip a:hover {
+  color: mediumspringgreen;
+  text-shadow: 1px 1px 0 rgb(0, 12, 7), 0 0 0.2em rgb(0, 129, 65), 0 0 0.4em rgb(0, 70, 0), 1px 1px 0.6em rgb(0, 30, 0);
+  transition: 0.7s;
+}
+
+/* This .chip img is positioning and defining the size of the buttons' img logo.
+His float is allowing the img and text link to stay side by side. */
+.chip img {
+  float: left;
+  margin: 0 10px 0 -25px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+/* This "a" is about the lesson's link buttons text. 
+He's removing the underline link's decoration, increasing his font size too, and defining his padding. */
+a {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 2px;
+  font-size: 20px;
+}
+
+/* That was for the old "a" links. They was removed. */
+/* button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+} */
+
+/* Animation display party! */
+
+/* The header is for the main title that is coming to the center from the top. */
+header {
+  animation: fromTop 0.9s 0.2s backwards;
+}
+
+/* The main is for the information boxes that is coming to the center from left. */
+main {
+  animation: fromLeft 0.9s backwards;
+}
+
+/* The aside is for the lesson's link boxes that is coming to the center from right. */
+aside {
+  animation: fromRight 0.9s backwards;
+}
+
+/* These two are the commands to the header's and main's animations. */
+@keyframes fromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
