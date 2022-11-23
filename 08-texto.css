@@ -25,14 +25,27 @@ body {
     padding: 0;
 }
 
-.logo {
+.homelogo {
     position: absolute;
     top: 1%;
     left: 1%;
     height: 0;
     margin: 0;
     padding: 0;
-}
+  }
+  
+  .uplogo {
+    position: fixed;
+    bottom: 7%;
+    right: 1%;
+    height: 0;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .uplogo:hover {
+    color: mediumspringgreen;
+  }
 
 .título {
     display: flex;

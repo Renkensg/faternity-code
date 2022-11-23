@@ -169,7 +169,7 @@ aside {
 
 .fa-discord:hover {
   transform: scale(1.4);
-  text-shadow: 1px 1px 0 rgb(0, 12, 7), 0 0 0.2em rgb(255, 0, 255), 0 0 0.7em rgb(128, 0, 255), 1px 1px 1.3em rgb(71, 0, 143);
+  text-shadow: 1px 1px 0 rgb(0, 12, 7), 0 0 0.2em 	rgb(102, 128, 223), 0 0 0.7em 	rgb(114, 137, 218), 1px 1px 1.3em 	rgb(10, 21, 59);
   transition: 0.3s;
 }
 
